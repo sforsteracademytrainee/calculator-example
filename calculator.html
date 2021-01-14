@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container" id="calc">
-        <h1 class="text-center">Let's Compute</h1>
+        <h1 class="text-center" id="calc-title">Calculator</h1>
         <div class="row">
             <div class="col-md">
                 <input type="number" class="form-control" id="firstNum" 
@@ -22,9 +22,9 @@
         <div class = "row">
             <div class="col-md text-center">
                 <button class="btn btn-primary" id="add" onClick="add();">&plus;</button>
-                <button class="btn btn-primary" id="sub" onClick="subtract();">&minus;</button>
-                <button class="btn btn-primary" id="mult" onClick="multiply();">&times;</button>
-                <button class="btn btn-primary" id="div" onClick="divide();">&divide;</button>
+                <button class="btn btn-primary" id="sub" onClick="sub();">&minus;</button>
+                <button class="btn btn-primary" id="mult" onClick="mult();">&times;</button>
+                <button class="btn btn-primary" id="div" onClick="div();">&divide;</button>
             </div>
 
             <div class="col-md">
@@ -32,7 +32,7 @@
             </div>
             <br>
             <div class="col-md">
-                <button class="btn btn-danger" id="c" onClick="">Clear</button>
+                <button class="btn btn-danger" id="clear" onClick="">Clear</button>
             </div>
             <br>
         </div>
@@ -40,9 +40,7 @@
         <div class="row">
             <div class="col-md text-center">
                 <h3 class="title">Operation history:</h3>
-                <div id="history">
-                    
-                </div>
+                <div id="history"></div>
             </div>
         </div>
 

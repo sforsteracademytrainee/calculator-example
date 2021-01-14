@@ -2,7 +2,10 @@ const num1 = document.querySelector("#firstNum");
 const num2 = document.querySelector("#secondNum");
 const result = document.querySelector("#result");
 const history = document.querySelector("#history");
-const clearButton = document.querySelector("#c");
+
+const calcTitle = document.querySelector("#calc-title");
+
+const buttonClear = document.querySelector("#clear");
 
 const buttonAdd = document.querySelector("#add");
 const buttonSub = document.querySelector("#sub");
@@ -24,9 +27,17 @@ const addToHistory = (num1, num2, operator, result) => {
     history.appendChild(historyLine);
 }
 
-c.addEventListener("click", function(){ // event listener instead of having onClick
+buttonClear.addEventListener("click", function(){ // event listener instead of having onClick
     history.innerHTML = "";
 });
+
+document.addEventListener("keydown", function() {
+    calcTitle.style.color="red";
+});
+
+document.addEventListener("keyup", function() {
+    calcTitle.style.color="black";
+})
 
 const buttonColor = (operation) => { // marks the last button used in light blue
     buttonAdd.setAttribute("class", "btn btn-primary");
@@ -54,7 +65,7 @@ const add = () => {
     buttonColor("+");
 }
 
-const subtract = () => {
+const sub = () => {
     const [num1, num2] = getValues();
     const newResult = num1 - num2;
     printResult(newResult);
@@ -62,7 +73,7 @@ const subtract = () => {
     buttonColor("-");
 }
 
-const divide = () => {
+const div = () => {
     const [num1, num2] = getValues();
     const newResult = num1 / num2;
     printResult(newResult);
@@ -70,7 +81,7 @@ const divide = () => {
     buttonColor("/");
 }
 
-const multiply = () => {
+const mult = () => {
     const [num1, num2] = getValues();
     const newResult = num1 * num2;
     printResult(newResult);
