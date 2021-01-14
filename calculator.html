@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" id="calc">
+        <h1 class="text-center">Let's Compute</h1>
+        <div class="row">
+            <div class="col-md">
+                <input type="number" class="form-control" id="firstNum" 
+                placeholder="First number:" name="firstNum"/>
+                <br>
+                <input type="number" class="form-control" id="secondNum"
+                placeholder="Second number:" name="secondNum"/>
+            </div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class="col-md text-center">
+                <button class="btn btn-primary" id="+" onClick="add();">&plus;</button>
+                <button class="btn btn-primary" id="-" onClick="subtract();">&minus;</button>
+                <button class="btn btn-primary" id="x" onClick="multiply();">&times;</button>
+                <button class="btn btn-primary" id="" onClick="divide();">&divide;</button>
+            </div>
+
+            <div class="col-md">
+                <input typ="text" class="form-control" id="result" name="result" placeholder="Result" disabld/>
+            </div>
+            <br>
+            <div class="col-md">
+                <button class="btn btn-danger" id="c" onClick="">Clear</button>
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md text-center">
+                <div id="history">
+                    <h3 class="title">Operation history:</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- js -->
+    <script src="calculator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
