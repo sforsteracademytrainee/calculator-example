@@ -27,10 +27,12 @@ const addToHistory = (num1, num2, operator, result) => {
     history.appendChild(historyLine);
 }
 
-buttonClear.addEventListener("click", function(){ // event listener instead of having onClick
+// event listener instead of having onClick to clear history
+buttonClear.addEventListener("click", function(){ 
     history.innerHTML = "";
 });
 
+// event listeners to toggle calc title to red on keypress
 document.addEventListener("keydown", function() {
     calcTitle.style.color="red";
 });
@@ -39,7 +41,8 @@ document.addEventListener("keyup", function() {
     calcTitle.style.color="black";
 })
 
-const buttonColor = (operation) => { // marks the last button used in light blue
+// marks the last button used in light blue
+const buttonColor = (operation) => { 
     buttonAdd.setAttribute("class", "btn btn-primary");
     buttonSub.setAttribute("class", "btn btn-primary");
     buttonMult.setAttribute("class", "btn btn-primary");
@@ -57,6 +60,15 @@ const buttonColor = (operation) => { // marks the last button used in light blue
     btn.setAttribute("class", "btn btn-info")
 }
 
+// on window load add a comment to the history
+window.onload = () => { 
+    const historyLine = document.createElement("p");
+    const info = document.createTextNode("Welcome to calculator!");
+    historyLine.appendChild(info);
+    history.appendChild(historyLine);
+}
+
+// calc operations
 const add = () => {
     const [num1, num2] = getValues();
     const newResult = num1 + num2;
@@ -87,11 +99,4 @@ const mult = () => {
     printResult(newResult);
     addToHistory(num1, num2, "x", newResult);
     buttonColor("x");
-}
-
-window.onload = () => {
-    const historyLine = document.createElement("p");
-    const info = document.createTextNode("Welcome to calculator!");
-    historyLine.appendChild(info);
-    history.appendChild(historyLine);
 }
